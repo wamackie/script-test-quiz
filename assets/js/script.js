@@ -1,29 +1,53 @@
-var timerEl = document.getElementById('showTime');
 var startBtn = document.getElementById('startQuiz');
-var questions = [
-    { q: 'Javascript can be linked to an HTML.', a: 'Yes', b: 'No', c: 'They do not work together', d: 'Only one can be used', trueAnswer: 'Yes'},
-    { q: 'Javascript can be used to create for loops.', a: 'Yes', b: 'No', c: 'For loops do not exist', d: 'For loops should always be created in HTML', trueAnswer: 'Yes'},
-    { q: 'Javascript is used only to edit the look of a website.', a: 'Yes', b: 'No', c: 'Javascript creates the basic web page outline', d: 'Javascript is not used in web development', trueAnswer: 'No'},
-    { q: 'Javascript can be used to add h1 elements to a web page', a: 'Yes', b: 'No', c: 'Only HTML can create h1 elements', d: 'Only CSS can create h1 elements', trueAnswer: 'Yes'},
-  ];
+var timerEl = document.getElementById('showTime');
+var welcomeEl = document.querySelector('.welcome')
+var hiddenBtns = document.querySelector('#hiddenBtn');
+var questionEl = document.getElementById('questionAsk');
+var answerLi = document.getElementById('answerList');
+var questionArray = 0;
 var score = 0;
+var questions = [
+    { 
+        question: '____ is used mainly to affect the website design.', 
+        answers: ['HTML', 'CSS', 'Javascript', 'Python'],
+        trueAnswer: 'Yes'
+    },
+    { 
+        question: '____ is used mainly to create the framework of web pages.', 
+        answers: ['HTML', 'CSS', 'Javascript', 'Python'],
+        trueAnswer: 'Yes'
+    },
+    { 
+        question: '____ is a seperate language from the others in this list.', 
+        answers: ['HTML', 'CSS', 'Javascript', 'Python'],
+        trueAnswer: 'Python'
+    },
+    { 
+        question: '// adds a comment in ____.', 
+        answers: ['HTML', 'CSS', 'Javascript', 'Python'],
+        trueAnswer: 'Javascript'
+    },
+  ];
 
-for (var i = 0; i < questions.length; i++) {
-    var answer = confirm(questions[i].q);
-
-    if (
-        (answer === true)
-    ) {
-        score++;
+function displayQuestion () {
+    hiddenBtns.style.display = 'block';
+    questionEl.textContent = questions[questionArray].question;
+    for (i = 0; i < 4; i++) {
+        var listEl = document.createElement('li');
+        console.log(questions[questionArray].answers);
+        answerLi.append(listEl)
     }
+
 }
 
 function countdown () {
     timeLeft = 75;
-
+    startBtn.style.display = 'none';
+    welcomeEl.style.display = 'none';
+    displayQuestion ();
     var timeInterval = setInterval(function() {
         if (timeLeft > 1 ) {
-            timerEl.textContent = timeLeft + ' seconds remaining';
+            timerEl.textContent = timeLeft;
             timeLeft--;
         } else {
             timerEl.textContent = '';
@@ -35,7 +59,9 @@ function countdown () {
 
 
 
-startBtn.onclick = countdown;
+
+startBtn.onclick = countdown; 
 
 
-
+//add eventlistener
+//when choose eventlisteneer compare it to what true answer is 
