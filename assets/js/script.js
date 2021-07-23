@@ -35,8 +35,15 @@ function displayQuestion () {
     for (i = 0; i < 4; i++) {
         var listEl = document.createElement('li');
         console.log(questions[questionArray].answers);
+        listEl.textContent = questions[questionArray].answers[i];
+        listEl.addEventListener('click', checkAnswer);
         answerLi.append(listEl)
     }
+}
+
+function checkAnswer () {
+    if (listEl.'click' === trueAnswer)
+    score++
 
 }
 
