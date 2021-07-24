@@ -42,9 +42,9 @@ function displayQuestion () {
 }
 
 function checkAnswer () {
-    if (listEl.'click' === trueAnswer)
-    score++
-
+    if (this.textContent === currentQuestion.trueAnswer){
+        score++
+    }
 }
 
 function countdown () {
