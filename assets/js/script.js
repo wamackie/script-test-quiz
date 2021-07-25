@@ -48,13 +48,14 @@ function showResults () {
     resultBtn.style.display = 'block';
     finalScoreEl.textContent = score;
     localStorage.setItem("finalScore", finalScore);
-    
+
 
 
 }
 
 btnInsertEl.addEventListener('click', function (event) {
-    leaderboardArray.push({score: score, initials: inpkey.value.trim()})
+    leaderboardArray.push({score: score, initials: inpKey.value.trim()});
+    //
     localStorage.setItem('leaderboard', JSON.stringify(leaderboardArray));
   })
 
@@ -113,4 +114,4 @@ startBtn.onclick = countdown;
 
 JSON.parse(localStorage.getItem('leaderboard'));
 
-leaderboardArray = JSON.parse(localStorage.getItem('leaderboard'));
+leaderboardArray = JSON.parse(localStorage.getItem('leaderboard')) || [];
