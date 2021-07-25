@@ -11,7 +11,7 @@ const inpKey = document.getElementById("initials");
 const inpValue = document.getElementById("inpValue");
 const btnInsert = document.getElementById("btnInsert");
 const leaderboard = document.getElementById("lsOutput");
-
+var leaderboardArray = [];
 btnInsert.onclick = function () {
   const key = inpKey.value;
 };
@@ -47,13 +47,15 @@ function showResults () {
     questionEl.textContent = "";
     resultBtn.style.display = 'block';
     finalScoreEl.textContent = score;
-    localStorage.setItem("finalScore", finalScore)
+    localStorage.setItem("finalScore", finalScore);
+    
+
+
 }
 
 btnInsertEl.addEventListener('click', function (event) {
-    //localStorage.setItem('leaderboard', JSON.stringify(leaderboard_variable));
-    //JSON.parse(localStorage.getItem('leaderboard')
-
+    leaderboardArray.push({score: score, initials: inpkey.value.trim()})
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboardArray));
   })
 
 function displayQuestion () {
@@ -107,17 +109,8 @@ function countdown () {
 
 
 
-startBtn.onclick = countdown; 
+startBtn.onclick = countdown;
 
+JSON.parse(localStorage.getItem('leaderboard'));
 
-//add eventlistener
-//when choose eventlistener compare it to what true answer is 
-
-//DOM elements to show initials and score with a form input
-
-//localStorage.setItem('leaderboard', JSON.stringify(leaderboard_variable)
-//JSON.parse(localStorage.getItem('leaderboard')
-
-
-
-
+leaderboardArray = JSON.parse(localStorage.getItem('leaderboard'));

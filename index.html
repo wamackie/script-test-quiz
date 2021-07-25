@@ -14,7 +14,7 @@
     </header>
     <main>
         <div class="container">
-            <h1 class="welcome">Are you ready?</h1>
+            <h1 class="welcome">Start?</h1>
             <button id="startQuiz">Start Quiz</button>
         </div>
         <div id="hiddenBtn" style ="display:none">
@@ -36,21 +36,5 @@
     </main>
     <script src="./assets/js/script.js"></script>
   </body>
-  <script type="text/javascript">
-    const inpKey = document.getElementById("initials");
-    const inpValue = document.getElementById("inpValue");
-    const btnInsert = document.getElementById("btnInsert");
-    const leaderboard = document.getElementById("lsOutput");
-
-    btnInsert.onclick = function () {
-      const key = inpKey.value;
-    };
-
-    for (let i = 0; i < localStorage.length; i++){
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key);
-
-      leaderboard.innerHTML += key
-    }
   </script>
 </html>
