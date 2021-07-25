@@ -31,38 +31,42 @@ var questions = [
 
 function showResults () {
     window.alert("if this shows its working");
+    answerLi.innerHTML = "";
+    questionEl.textContent = "";
+    var scoreEl = document.createElement('li');
+    scoreEl.textContent = score;
+    answerLi.append(scoreEl);
 }
 
 function displayQuestion () {
     answerLi.innerHTML = "";
     hiddenBtns.style.display = 'block';
     questionEl.textContent = questions[questionArrayIndex].question;
-    var currentQuestion = 0;
     for (i = 0; i < 4; i++) {
         var listEl = document.createElement('li');
         console.log(questions[questionArrayIndex].answers);
         listEl.textContent = questions[questionArrayIndex].answers[i];
         listEl.addEventListener('click', checkAnswer);
-        currentQuestion += 1
         answerLi.append(listEl);
-        if (currentQuestion === 4) {
-            showResults
-        }
     }
 }
 
 function checkAnswer () {
     console.log('inside checkAnswer');
-  console.log('score', score);
   console.log('this.textContent', this.textContent);
   console.log('questions[questionArrayIndex].trueAnswer', questions[questionArrayIndex].trueAnswer);
     if (this.textContent === questions[questionArrayIndex].trueAnswer){
-        score++
+        score++;
+        console.log('score', score)
     } else {
         timeLeft = timeLeft - 15
     }
     questionArrayIndex++;
+    if (questionArrayIndex === 4) {
+        showResults();
+    } else {
     displayQuestion();
+    }
 }
 
 function countdown () {
@@ -90,3 +94,5 @@ startBtn.onclick = countdown;
 
 //add eventlistener
 //when choose eventlisteneer compare it to what true answer is 
+
+//DOM elements to show initials and score with a form input
