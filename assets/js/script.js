@@ -2,6 +2,7 @@ var startBtn = document.getElementById('startQuiz');
 var timerEl = document.getElementById('showTime');
 var welcomeEl = document.querySelector('.welcome')
 var hiddenBtns = document.querySelector('#hiddenBtn');
+var resultBtn = document.querySelector('#hiddenResultBtn');
 var questionEl = document.getElementById('questionAsk');
 var answerLi = document.getElementById('answerList');
 var questionArrayIndex = 0;
@@ -33,9 +34,14 @@ function showResults () {
     window.alert("if this shows its working");
     answerLi.innerHTML = "";
     questionEl.textContent = "";
-    var scoreEl = document.createElement('li');
-    scoreEl.textContent = score;
-    answerLi.append(scoreEl);
+    resultBtn.style.display = 'block';
+    //var scoreEl.textContent = score
+
+    
+    // questionEl.textContent = "";
+    // var scoreEl = document.createElement('li');
+    // scoreEl.textContent = score;
+    // answerLi.append(scoreEl);
 }
 
 function displayQuestion () {
