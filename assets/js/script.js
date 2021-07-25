@@ -7,6 +7,7 @@ var questionEl = document.getElementById('questionAsk');
 var answerLi = document.getElementById('answerList');
 var finalScoreEl = document.querySelector('#finalScore');
 var btnInsertEl = document.querySelector('#btnInsert');
+var scoreArray = JSON.parse(localStorage.getItem('leaderboard'));
 const inpKey = document.getElementById("initials");
 const inpValue = document.getElementById("inpValue");
 const btnInsert = document.getElementById("btnInsert");
@@ -55,7 +56,10 @@ function showResults () {
 
 btnInsertEl.addEventListener('click', function (event) {
     leaderboardArray.push({score: score, initials: inpKey.value.trim()});
-    //
+    for (let i = 0; i < scoreArray.length; i++) {
+        console.log(scoreArray[i].score);
+        console.log(scoreArray[i].initials);
+    }
     localStorage.setItem('leaderboard', JSON.stringify(leaderboardArray));
   })
 
