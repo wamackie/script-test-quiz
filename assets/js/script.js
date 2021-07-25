@@ -6,6 +6,16 @@ var resultBtn = document.querySelector('#hiddenResultBtn');
 var questionEl = document.getElementById('questionAsk');
 var answerLi = document.getElementById('answerList');
 var finalScoreEl = document.querySelector('#finalScore');
+var btnInsertEl = document.querySelector('#btnInsert');
+const inpKey = document.getElementById("initials");
+const inpValue = document.getElementById("inpValue");
+const btnInsert = document.getElementById("btnInsert");
+const leaderboard = document.getElementById("lsOutput");
+
+btnInsert.onclick = function () {
+  const key = inpKey.value;
+};
+
 var questionArrayIndex = 0;
 var score = 0;
 var questions = [
@@ -39,6 +49,12 @@ function showResults () {
     finalScoreEl.textContent = score;
     localStorage.setItem("finalScore", finalScore)
 }
+
+btnInsertEl.addEventListener('click', function (event) {
+    //localStorage.setItem('leaderboard', JSON.stringify(leaderboard_variable));
+    //JSON.parse(localStorage.getItem('leaderboard')
+
+  })
 
 function displayQuestion () {
     answerLi.innerHTML = "";
@@ -95,6 +111,13 @@ startBtn.onclick = countdown;
 
 
 //add eventlistener
-//when choose eventlisteneer compare it to what true answer is 
+//when choose eventlistener compare it to what true answer is 
 
 //DOM elements to show initials and score with a form input
+
+//localStorage.setItem('leaderboard', JSON.stringify(leaderboard_variable)
+//JSON.parse(localStorage.getItem('leaderboard')
+
+
+
+
