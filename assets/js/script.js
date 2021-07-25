@@ -37,7 +37,7 @@ function displayQuestion () {
     answerLi.innerHTML = "";
     hiddenBtns.style.display = 'block';
     questionEl.textContent = questions[questionArrayIndex].question;
-    var currentQuestion = 0
+    var currentQuestion = 0;
     for (i = 0; i < 4; i++) {
         var listEl = document.createElement('li');
         console.log(questions[questionArrayIndex].answers);
@@ -45,7 +45,7 @@ function displayQuestion () {
         listEl.addEventListener('click', checkAnswer);
         currentQuestion += 1
         answerLi.append(listEl);
-        if (questionArrayIndex = currentQuestion) {
+        if (currentQuestion === 4) {
             showResults
         }
     }
