@@ -5,6 +5,7 @@ var hiddenBtns = document.querySelector('#hiddenBtn');
 var resultBtn = document.querySelector('#hiddenResultBtn');
 var questionEl = document.getElementById('questionAsk');
 var answerLi = document.getElementById('answerList');
+var finalScoreEl = document.querySelector('#finalScore');
 var questionArrayIndex = 0;
 var score = 0;
 var questions = [
@@ -35,6 +36,7 @@ function showResults () {
     answerLi.innerHTML = "";
     questionEl.textContent = "";
     resultBtn.style.display = 'block';
+    finalScoreEl.textContent = score;
     //var scoreEl.textContent = score
 
     
