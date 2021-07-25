@@ -22,12 +22,35 @@
             <ul id="answerList"></ul>
         </div>
         <div id="hiddenResultBtn" style="display:none">
-          <h1 id="finalScore"></h1>
-          <input type="text" id="initials">
-          <button>Submit</button>
+          <fieldset>
+            <h1 id="finalScore"></h1>
+            <input type="text" id="initials">
+            <button id="btnInsert">Submit Initials</button>
+          </fieldset>
+          <fieldset>
+            <legend>Leaderboard</legend>
+            <div id="leaderboard"></div>
+          </fieldset>
         </div>
     
     </main>
     <script src="./assets/js/script.js"></script>
   </body>
+  <script type="text/javascript">
+    const inpKey = document.getElementById("initials");
+    const inpValue = document.getElementById("inpValue");
+    const btnInsert = document.getElementById("btnInsert");
+    const leaderboard = document.getElementById("lsOutput");
+
+    btnInsert.onclick = function () {
+      const key = inpKey.value;
+    };
+
+    for (let i = 0; i < localStorage.length; i++){
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+
+      leaderboard.innerHTML += key
+    }
+  </script>
 </html>

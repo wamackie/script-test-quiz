@@ -37,13 +37,7 @@ function showResults () {
     questionEl.textContent = "";
     resultBtn.style.display = 'block';
     finalScoreEl.textContent = score;
-    //var scoreEl.textContent = score
-
-    
-    // questionEl.textContent = "";
-    // var scoreEl = document.createElement('li');
-    // scoreEl.textContent = score;
-    // answerLi.append(scoreEl);
+    localStorage.setItem("finalScore", finalScore)
 }
 
 function displayQuestion () {
