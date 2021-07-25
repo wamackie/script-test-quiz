@@ -8,7 +8,7 @@ var questionArrayIndex = 0;
 var score = 0;
 var questions = [
     { 
-        question: '____ is used mainly to affect the website design.', 
+        question: '____ is used mainly to affect the website style.', 
         answers: ['HTML', 'CSS', 'Javascript', 'Python'],
         trueAnswer: 'CSS'
     },
@@ -29,7 +29,12 @@ var questions = [
     },
   ];
 
+function showResults () {
+    window.alert("if this shows its working");
+}
+
 function displayQuestion () {
+    answerLi.innerHTML = "";
     hiddenBtns.style.display = 'block';
     questionEl.textContent = questions[questionArrayIndex].question;
     for (i = 0; i < 4; i++) {
@@ -37,7 +42,10 @@ function displayQuestion () {
         console.log(questions[questionArrayIndex].answers);
         listEl.textContent = questions[questionArrayIndex].answers[i];
         listEl.addEventListener('click', checkAnswer);
-        answerLi.append(listEl)
+        answerLi.append(listEl);
+        if (questionArrayIndex = 4) {
+            showResults
+        }
     }
 }
 
@@ -49,7 +57,7 @@ function checkAnswer () {
     if (this.textContent === questions[questionArrayIndex].trueAnswer){
         score++
     } else {
-        timeLeft - 15
+        timeLeft = timeLeft - 15
     }
     questionArrayIndex++;
     displayQuestion();
