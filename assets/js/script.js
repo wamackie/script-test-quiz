@@ -4,18 +4,18 @@ var welcomeEl = document.querySelector('.welcome')
 var hiddenBtns = document.querySelector('#hiddenBtn');
 var questionEl = document.getElementById('questionAsk');
 var answerLi = document.getElementById('answerList');
-var questionArray = 0;
+var questionArrayIndex = 0;
 var score = 0;
 var questions = [
     { 
         question: '____ is used mainly to affect the website design.', 
         answers: ['HTML', 'CSS', 'Javascript', 'Python'],
-        trueAnswer: 'Yes'
+        trueAnswer: 'CSS'
     },
     { 
         question: '____ is used mainly to create the framework of web pages.', 
         answers: ['HTML', 'CSS', 'Javascript', 'Python'],
-        trueAnswer: 'Yes'
+        trueAnswer: 'HTML'
     },
     { 
         question: '____ is a seperate language from the others in this list.', 
@@ -31,20 +31,28 @@ var questions = [
 
 function displayQuestion () {
     hiddenBtns.style.display = 'block';
-    questionEl.textContent = questions[questionArray].question;
+    questionEl.textContent = questions[questionArrayIndex].question;
     for (i = 0; i < 4; i++) {
         var listEl = document.createElement('li');
-        console.log(questions[questionArray].answers);
-        listEl.textContent = questions[questionArray].answers[i];
+        console.log(questions[questionArrayIndex].answers);
+        listEl.textContent = questions[questionArrayIndex].answers[i];
         listEl.addEventListener('click', checkAnswer);
         answerLi.append(listEl)
     }
 }
 
 function checkAnswer () {
-    if (this.textContent === currentQuestion.trueAnswer){
+    console.log('inside checkAnswer');
+  console.log('score', score);
+  console.log('this.textContent', this.textContent);
+  console.log('questions[questionArrayIndex].trueAnswer', questions[questionArrayIndex].trueAnswer);
+    if (this.textContent === questions[questionArrayIndex].trueAnswer){
         score++
+    } else {
+        timeLeft - 15
     }
+    questionArrayIndex++;
+    displayQuestion();
 }
 
 function countdown () {
