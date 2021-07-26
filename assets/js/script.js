@@ -7,7 +7,6 @@ var questionEl = document.getElementById('questionAsk');
 var answerLi = document.getElementById('answerList');
 var finalScoreEl = document.querySelector('#finalScore');
 var btnInsertEl = document.querySelector('#btnInsert');
-var scoreArray = JSON.parse(localStorage.getItem('leaderboard'));
 var scoreEl = document.getElementById('scoreArray[i].score');
 var initialsEl = document.getElementById('scoreArray[i].initials');
 const inpKey = document.getElementById("initials");
@@ -60,15 +59,15 @@ btnInsertEl.addEventListener('click', function (event) {
     leaderboardArray.push({score: score, initials: inpKey.value.trim()});
     console.log('score', score);
     console.log('initials', inpKey.value.trim());
-    // for (let i = 0; i < scoreArray.length; i++) {
-    //     console.log(scoreArray[i].score);
-    //     console.log(scoreArray[i].initials);
-    // }
-    // var results = document.createElement('li');
-    // results.textContent = 'initialsEl' + 'scoreEl';
-    // //scoreArray.append(results);
-
     localStorage.setItem('leaderboard', JSON.stringify(leaderboardArray));
+    var scoreArray = JSON.parse(localStorage.getItem('leaderboard'));
+    for (let i = 0; i < scoreArray.length; i++) {
+        console.log(scoreArray[i].score);
+        console.log(scoreArray[i].initials);
+        var results = document.createElement('li');
+        results.textContent = scoreArray[i].score + " " + scoreArray[i].initials;
+        document.getElementById('leaderboard').append(results)
+    }
   })
 
 function displayQuestion () {
