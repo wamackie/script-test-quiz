@@ -8,6 +8,8 @@ var answerLi = document.getElementById('answerList');
 var finalScoreEl = document.querySelector('#finalScore');
 var btnInsertEl = document.querySelector('#btnInsert');
 var scoreArray = JSON.parse(localStorage.getItem('leaderboard'));
+var scoreEl = document.getElementById('scoreArray[i].score');
+var initialsEl = document.getElementById('scoreArray[i].initials');
 const inpKey = document.getElementById("initials");
 const inpValue = document.getElementById("inpValue");
 const btnInsert = document.getElementById("btnInsert");
@@ -60,6 +62,10 @@ btnInsertEl.addEventListener('click', function (event) {
         console.log(scoreArray[i].score);
         console.log(scoreArray[i].initials);
     }
+    var results = document.createElement('li');
+    results.textContent = 'initialsEl' + 'scoreEl';
+    scoreArray.append(results);
+
     localStorage.setItem('leaderboard', JSON.stringify(leaderboardArray));
   })
 
