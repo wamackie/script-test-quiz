@@ -60,13 +60,13 @@ btnInsertEl.addEventListener('click', function (event) {
     leaderboardArray.push({score: score, initials: inpKey.value.trim()});
     console.log('score', score);
     console.log('initials', inpKey.value.trim());
-    for (let i = 0; i < scoreArray.length; i++) {
-        console.log(scoreArray[i].score);
-        console.log(scoreArray[i].initials);
-    }
-    var results = document.createElement('li');
-    results.textContent = 'initialsEl' + 'scoreEl';
-    scoreArray.append(results);
+    // for (let i = 0; i < scoreArray.length; i++) {
+    //     console.log(scoreArray[i].score);
+    //     console.log(scoreArray[i].initials);
+    // }
+    // var results = document.createElement('li');
+    // results.textContent = 'initialsEl' + 'scoreEl';
+    // //scoreArray.append(results);
 
     localStorage.setItem('leaderboard', JSON.stringify(leaderboardArray));
   })
