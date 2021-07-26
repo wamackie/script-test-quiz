@@ -58,6 +58,8 @@ function showResults () {
 
 btnInsertEl.addEventListener('click', function (event) {
     leaderboardArray.push({score: score, initials: inpKey.value.trim()});
+    console.log('score', score);
+    console.log('initials', inpKey.value.trim());
     for (let i = 0; i < scoreArray.length; i++) {
         console.log(scoreArray[i].score);
         console.log(scoreArray[i].initials);
