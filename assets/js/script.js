@@ -37,14 +37,13 @@ var questions = [
         trueAnswer: 'Python'
     },
     { 
-        question: '// adds a comment in ____.', 
+        question: '// is used to add a comment in ____.', 
         answers: ['HTML', 'CSS', 'Javascript', 'Python'],
         trueAnswer: 'Javascript'
     },
   ];
 
 function showResults () {
-    window.alert("if this shows its working");
     answerLi.innerHTML = "";
     questionEl.textContent = "";
     resultBtn.style.display = 'block';
@@ -111,9 +110,9 @@ function countdown () {
             timerEl.textContent = timeLeft;
             timeLeft--;
         } else {
-            timerEl.textContent = '';
+            timerEl.textContent = '0';
             clearInterval(timeInterval);
-            displayMessage();
+            showResults();
         }
     },1000);
 }
