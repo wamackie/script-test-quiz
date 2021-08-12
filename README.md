@@ -17,5 +17,10 @@ Click "Start Quiz" to begin the quiz. A timer will begin to count down from 75. 
 
 ![screenshot](assets/images/screenshot.png)
 
+## Website
+https://wamackie8456.github.io/script-test-quiz/
+
 ## Credits
 Script Quiz was created by William Mackie
+
+
