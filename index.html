@@ -9,12 +9,13 @@
   </head>
   <body>
     <header>
-        <h2>Time Remaining</h2>
+        <button id="viewLeaderboard">View Leaderboard</button>
+        <h2>Time Remaining:</h2>
         <h2 id="showTime"></h2>
     </header>
     <main>
         <div class="container">
-            <h1 class="welcome">Start?</h1>
+            <h1 class="welcome">Code Quiz</h1>
             <button id="startQuiz">Start Quiz</button>
         </div>
         <div id="hiddenBtn" style ="display:none">
@@ -27,10 +28,9 @@
             <input type="text" id="initials">
             <button id="btnInsert">Submit Initials</button>
           </fieldset>
-          <fieldset>
+          <fieldset id="leaderboardField">
             <legend>Leaderboard</legend>
             <div id="leaderboard"></div>
-            <button id="viewLeaderboard">View Leaderboard</button>
           </fieldset>
         </div>
     

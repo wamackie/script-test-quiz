@@ -7,6 +7,7 @@ var questionEl = document.getElementById('questionAsk');
 var answerLi = document.getElementById('answerList');
 var finalScoreEl = document.querySelector('#finalScore');
 var btnInsertEl = document.querySelector('#btnInsert');
+var btnLeaderboardEl = document.querySelector('#viewLeaderboard')
 var scoreEl = document.getElementById('scoreArray[i].score');
 var initialsEl = document.getElementById('scoreArray[i].initials');
 const inpKey = document.getElementById("initials");
@@ -49,10 +50,16 @@ function showResults () {
     resultBtn.style.display = 'block';
     finalScoreEl.textContent = score;
     localStorage.setItem("finalScore", finalScore);
-
+    if (timerEl.textContent > 0) {
+        timeLeft = 0
+    }
 
 
 }
+
+btnLeaderboardEl.addEventListener('click', function (event) {
+    
+})
 
 btnInsertEl.addEventListener('click', function (event) {
     leaderboardArray.push({score: score, initials: inpKey.value.trim()});

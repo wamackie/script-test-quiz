@@ -20,6 +20,9 @@ header {
     box-shadow: 2px 2px black;
 }
 
+button#viewLeaderboard {
+    float: right;
+}
 li {
     float: left;
     list-style-type: none;
